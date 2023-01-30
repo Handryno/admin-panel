@@ -1,241 +1,112 @@
 <template>
-    <div class="dashboard">
-        <v-subheader class="py-0 d-flex justify-space-between rounded-lg">
-            <h3>Dashboard</h3>
-            <v-btn color="success">
-                Open Tabungan Emas
-            </v-btn>
-        </v-subheader>
-        <br>
-        <v-row>
-            <v-col lg="7" cols="12">
-                <!-- <v-alert dense text type="success">
-                    Login Successfully! Welcome to <strong>Transaction Dashboard</strong>
-                </v-alert> -->
-                <v-row>
-                    <v-col lg="6" cols="12" v-for="(item, index) in activityLog" :key="index">
-                        <v-card elevation="2" class="rounded-lg">
-                            <v-card-text class="d-flex justify-space-between align-center">
-                                <div>
-                                    <strong>{{ item.title }}</strong> <br>
-                                    <!-- <span>Last 3 weeks</span> -->
-                                </div>
-                                <v-avatar size="60" :color="item.color" style="border: 3px solid #444">
-                                    <span style="color: white">{{ item.amount }} +</span>
-                                </v-avatar>
-                            </v-card-text>
-                            <v-card-actions class="d-flex justify-space-between">
+  <div class="container mx-auto px-24">
 
+    <div class="grid grid-cols-2 gap-6">
+      <div class="bg-slate-200 h-auto rounded-md shadow-lg">
+        <div class="font-medium text-3xl p-4">Mau Transaksi Apa ?</div>
+        <!-- Card 1 sample to Looping -->
+        <div class="card1">
+          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
+        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
+          <img src="./../assets/ico-tabungan.svg">
+        </div>
+          <p class="title text-sm pt-4 ">Tabungan Emas</p>
+        </div>
+        </div>
+        <div class="card1">
+          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
+        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
+          <img src="./../assets/icon-bayar-gadai.svg">
+        </div>
+          <p class="title text-sm pt-4 ">Bayar Gadai</p>
+        </div>
+        </div>
+        <div class="card1">
+          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
+        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
+          <img src="./../assets/icon-bayar-cicilan.svg">
+        </div>
+          <p class="title text-sm pt-4 ">Bayar Cicilan</p>
+        </div>
+        </div>
+        <div class="card1">
+          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
+        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
+          <img src="./../assets/ico-cicil-emas.svg">
+        </div>
+          <p class="title text-sm pt-4 ">Cicil Emas Batangan</p>
+        </div>
+        </div>
+        
+      </div>
 
-                            </v-card-actions>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-col>
-            <v-col cols="12" lg="5">
-                <!-- <v-card>
-                    <v-card-title>Activities</v-card-title>
-                    <v-card-text class="py-0">
-                        <v-timeline align-top dense>
-                            <v-timeline-item color="indigo" small>
-                                <strong>5 Minuts ago</strong>
-                                <div class="text-caption">
-                                    You have new order please check this out
-                                </div>
-                            </v-timeline-item>
-                            <v-timeline-item color="green" small>
-                                <strong>35 Minuts ago</strong>
-                                <div class="text-caption mb-2">
-                                    A Product has delivered!
-                                </div>
-                            </v-timeline-item>
+      <div class="bg-slate-200 h-auto px-5 rounded-md">
+        <div class="header pt-6 pl-6">
+          <div class="text-2xl ">Tabungan Emas Anda</div>
+          <p class="text-xs">Selasa || 16 Jan 2023</p>
+        </div>
 
-                            <v-timeline-item color="indigo" small>
-                                <strong>44 Minuts ago</strong>
-                                <div class="text-caption">
-                                    You have new order please check this out
-                                </div>
-                            </v-timeline-item>
-                        </v-timeline>
-                    </v-card-text>
-                </v-card> -->
-            </v-col>
-            <v-col>
-                <v-card>
-                    <v-data-table caption="Recent Transaction list" :headers="headers" :items="desserts" :items-per-page="5"
-                        class="elevation-1">
-                        <!-- <template v-slot:item.action="">
-                            <v-btn color="success" outlined small shaped>View</v-btn>
-                        </template> -->
-                    </v-data-table>
-                </v-card>
-            </v-col>
-        </v-row>
+        <!-- Card Jual & Beli -->
+        <div class="card grid grid-cols-2 gap-3 p-4 h-auto bg-gray-50 rounded">
+          <!-- Jual Emas -->
+          <div class="jual">
+            <div class="harga flex">
+              <div class="rupiah mr-1">Rp 9,500</div> / <div class="gram font-light text-sm mt-0.5 ml-1">0,09 gr</div>
+            </div>
+            <button class="button bg-green-600 w-full p-1 font-semibold text-gray-50 mt-4 rounded">Beli Emas</button>
+          </div>
+          <!-- Beli Emas -->
+          <div class="jual">
+            <div class="harga flex">
+              <div class="rupiah mr-1">Rp 9,372</div> / <div class="gram font-light text-sm mt-0.5 ml-1">0,09 gr</div>
+            </div>
+            <button class="button outline outline-1 hover:outline-2 outline-green-600 w-full p-1 font-semibold text-gray-800 mt-4 rounded">Beli Emas</button>
+          </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="cahrt mt-6">
+          <div class="head text-center font-semibold text-xl mb-4"> Jual Dan Beli</div>
+            <Chart :data="data" :options="options" :type="type" />   
+        </div>
+      </div>
+
     </div>
+  </div>
 </template>
-
 <script>
+// import logo from "./assets/ico-tabungan.svg";
+import Chart from 'vue-chartjs3'
 export default {
-    name: "Dashboard",
-    props: {
-        activityLog: {
-            type: Array,
-            default: () => [
-                {
-                    link: '',
-                    title: 'Inquiry',
-                    amount:0,
-                    icon: 'mdi-account',
-                    color:'cyan lighten-3'
-                },
-                {
-                    link: '',
-                    title: 'Trace',
-                    amount: 0,
-                    icon: 'mdi-account-group-outline',
-                    color: 'green darken-2'
-                },
-                {
-                    link: '',
-                    title: 'CreateBilling',
-                    amount: 0,
-                    icon: 'mdi-clipboard-list-outline',
-                    color: 'blue-grey darken-1'
-                },
-                {
-                    link: '',
-                    title: 'Failed',
-                    amount: 0,
-                    icon: 'mdi-clipboard-list-outline',
-                    color: 'deep-orange darken-1'
-                },
-            ],
-        },
+  name: 'App',
+  components: {
+        Chart
     },
-    data() {
+    data () {
         return {
-            // activityLog: [
-            //     { title: 'Inquiry', amount: 0, icon: 'mdi-account', color: 'cyan lighten-3' },
-            //     { title: 'Trace', amount: 0, icon: 'mdi-account-group-outline', color: 'green darken-2' },
-            //     { title: 'CreateBilling', amount: 0, icon: 'mdi-account-group-outline', color: 'blue-grey darken-1' },
-            //     {
-            //         title: 'Failed',
-            //         amount: 0,
-            //         icon: 'mdi-account-group-outline',
-            //         color: 'deep-orange darken-1'
-            //     },
-            // ],
-            headers: [
-                {
-                    text: 'Delivery Date',
-                    align: 'start',
-                    sortable: false,
-                    value: 'name',
-                },
-                { text: 'Request', value: 'request' },
-                { text: 'Response', value: 'response' },
-                { text: 'Application', value: 'application' },
-                { text: 'Target', value: 'target' },
-                { text: 'Topic', value: 'topic' },
-                { text: 'Actions', value: 'action' },
-            ],
-            desserts: [
-                {
-                    name: 'Frozen Yogurt',
-                    calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
-                },
-                {
-                    name: 'Ice cream sandwich',
-                    calories: 237,
-                    fat: 9.0,
-                    carbs: 37,
-                    protein: 4.3,
-                    iron: '1%',
-                },
-                {
-                    name: 'Eclair',
-                    calories: 262,
-                    fat: 16.0,
-                    carbs: 23,
-                    protein: 6.0,
-                    iron: '7%',
-                },
-                {
-                    name: 'Cupcake',
-                    calories: 305,
-                    fat: 3.7,
-                    carbs: 67,
-                    protein: 4.3,
-                    iron: '8%',
-                },
-                {
-                    name: 'Gingerbread',
-                    calories: 356,
-                    fat: 16.0,
-                    carbs: 49,
-                    protein: 3.9,
-                    iron: '16%',
-                },
-                {
-                    name: 'Jelly bean',
-                    calories: 375,
-                    fat: 0.0,
-                    carbs: 94,
-                    protein: 0.0,
-                    iron: '0%',
-                },
-                {
-                    name: 'Lollipop',
-                    calories: 392,
-                    fat: 0.2,
-                    carbs: 98,
-                    protein: 0,
-                    iron: '2%',
-                },
-                {
-                    name: 'Honeycomb',
-                    calories: 408,
-                    fat: 3.2,
-                    carbs: 87,
-                    protein: 6.5,
-                    iron: '45%',
-                },
-                {
-                    name: 'Donut',
-                    calories: 452,
-                    fat: 25.0,
-                    carbs: 51,
-                    protein: 4.9,
-                    iron: '22%',
-                },
-                {
-                    name: 'KitKat',
-                    calories: 518,
-                    fat: 26.0,
-                    carbs: 65,
-                    protein: 7,
-                    iron: '6%',
-                },
-            ],
-        }
-    },
-    methods: {
-        onButtonClick(item) {
-            console.log('click on ' + item.no)
-        }
+              // logo,
+              type: 'line',
+              data: {
+                labels: ["Januari", "February", "Maret", "April", "Mei", "Juni" , "Juli" , "Agustus"],
+                datasets: [
+                  {
+                    label: 'Harga Jual',
+                    data: [12, 19, 3, 5, 2, 3,9,3],
+                    backgroundColor: '#386380'
+                  },	
+                  {
+                    label: 'Harga Beli',
+                    data: [7, 11, 5, 8, 3, 7,5,6],
+                    backgroundColor: '#ff6384'
+                  }
+        		],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+              }
+        	}
     }
-}
-</script>
+};
 
-<style scoped>
-.overlap-icon {
-    position: absolute;
-    top: -33px;
-    text-align: center;
-    padding-top: 12px;
-}
-</style>
+</script>

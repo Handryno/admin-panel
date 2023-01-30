@@ -10,14 +10,9 @@ const routes = [
     component: () => import('./../views/Dashboard')
   },
   {
-    path: '/inquiry',
-    name: 'inquiry',
-    component: () => import('./../views/Inquiry')
-  },
-  {
-    path: '/createbilling',
-    name: 'createbilling',
-    component: () => import('./../views/CreateBilling')
+    path: '/detailPembayaran',
+    name: 'DetailPembayaran',
+    component: () => import('./../views/DetailPembayaran')
   },
 
 ]

@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import Sidebar from "./components/Sidebar";
-import Topbar from "./components/Topbar";
+import Sidebar from "./components/Navbar.vue";
+// import Topbar from "./components/Topbar";
 export default {
   name: "App",
-  components: { Topbar, Sidebar },
+  components: { Sidebar },
   data: () => ({
     cards: ["Today", "Yesterday"],
     drawer: null,
