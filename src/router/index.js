@@ -14,6 +14,27 @@ const routes = [
     name: 'DetailPembayaran',
     component: () => import('./../views/DetailPembayaran')
   },
+  {
+    path: '/konfirmasiNoHp',
+    name: 'KonfirmasiNoHp',
+    component: () => import('./../views/KonfirmasiNoHp')
+  },
+  {
+    path: '/konfirmasiTransaksi',
+    name: 'KonfirmasiTransaksi',
+    component: () => import('./../views/KonfirmasiTransaksi')
+  },
+  {
+    path: '/metodePembayaran',
+    name: 'MetodePembayaran',
+    component: () => import('./../views/MetodePembayaran')
+  },
+  {
+    path: '/methodeDetailPembayaran',
+    name: 'MethodeDetailPembayaran',
+    component: () => import('./../views/MethodeDetailPembayaran')
+  },
+
 
 ]
 

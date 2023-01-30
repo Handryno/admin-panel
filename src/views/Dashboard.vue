@@ -2,7 +2,7 @@
   <div class="container mx-auto px-24">
 
     <div class="grid grid-cols-2 gap-6">
-      <div class="bg-slate-200 h-auto rounded-md shadow-lg">
+      <div class="bg-slate-100 h-auto rounded-md shadow-lg">
         <div class="font-medium text-3xl p-4">Mau Transaksi Apa ?</div>
         <!-- Card 1 sample to Looping -->
         <div class="card1">
@@ -40,8 +40,8 @@
         
       </div>
 
-      <div class="bg-slate-200 h-auto px-5 rounded-md">
-        <div class="header pt-6 pl-6">
+      <div class="bg-slate-100 h-auto px-5 rounded-md">
+        <div class="header pt-6 ">
           <div class="text-2xl ">Tabungan Emas Anda</div>
           <p class="text-xs">Selasa || 16 Jan 2023</p>
         </div>
@@ -53,7 +53,8 @@
             <div class="harga flex">
               <div class="rupiah mr-1">Rp 9,500</div> / <div class="gram font-light text-sm mt-0.5 ml-1">0,09 gr</div>
             </div>
-            <button class="button bg-green-600 w-full p-1 font-semibold text-gray-50 mt-4 rounded">Beli Emas</button>
+            <a href="/detailPembayaran">
+            <button class=" bg-green-600 w-full p-1 font-semibold text-gray-50 mt-4 rounded">Beli Emas</button></a>
           </div>
           <!-- Beli Emas -->
           <div class="jual">
@@ -66,24 +67,30 @@
 
         <!-- Chart Section -->
         <div class="cahrt mt-6">
-          <div class="head text-center font-semibold text-xl mb-4"> Jual Dan Beli</div>
+          <div class="head text-center font-semibold text-xl mb-4 text-green-600"> Jual Dan Beli</div>
             <Chart :data="data" :options="options" :type="type" />   
         </div>
       </div>
 
     </div>
   </div>
+
+
+
 </template>
 <script>
 // import logo from "./assets/ico-tabungan.svg";
 import Chart from 'vue-chartjs3'
+import { RouterLink } from 'vue-router';
 export default {
   name: 'App',
   components: {
-        Chart
-    },
+    Chart,
+    RouterLink
+},
     data () {
         return {
+          
               // logo,
               type: 'line',
               data: {
