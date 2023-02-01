@@ -2,9 +2,6 @@
     <div class="dashboard">
         <v-subheader class="py-0 d-flex justify-space-between rounded-lg">
             <h3>Dashboard</h3>
-            <v-btn color="success">
-                Open Tabungan Emas
-            </v-btn>
         </v-subheader>
         <br>
         <v-row>
@@ -21,7 +18,7 @@
                                     <!-- <span>Last 3 weeks</span> -->
                                 </div>
                                 <v-avatar size="60" :color="item.color" style="border: 3px solid #444">
-                                    <span style="color: white">{{ item.amount }} +</span>
+                                    <span style="color: white">{{ item.amount }}</span>
                                 </v-avatar>
                             </v-card-text>
                             <v-card-actions class="d-flex justify-space-between">
@@ -33,7 +30,7 @@
                 </v-row>
             </v-col>
             <v-col cols="12" lg="5">
-                <!-- <v-card>
+                <v-card>
                     <v-card-title>Activities</v-card-title>
                     <v-card-text class="py-0">
                         <v-timeline align-top dense>
@@ -58,17 +55,10 @@
                             </v-timeline-item>
                         </v-timeline>
                     </v-card-text>
-                </v-card> -->
+                </v-card>
             </v-col>
             <v-col>
-                <v-card>
-                    <v-data-table caption="Recent Transaction list" :headers="headers" :items="desserts" :items-per-page="5"
-                        class="elevation-1">
-                        <!-- <template v-slot:item.action="">
-                            <v-btn color="success" outlined small shaped>View</v-btn>
-                        </template> -->
-                    </v-data-table>
-                </v-card>
+               
             </v-col>
         </v-row>
     </div>
@@ -83,28 +73,28 @@ export default {
             default: () => [
                 {
                     link: '',
-                    title: 'Inquiry',
+                    title: 'Tabungan Emas',
                     amount:0,
                     icon: 'mdi-account',
                     color:'cyan lighten-3'
                 },
                 {
                     link: '',
-                    title: 'Trace',
+                    title: 'Bayar Gadai',
                     amount: 0,
                     icon: 'mdi-account-group-outline',
                     color: 'green darken-2'
                 },
                 {
                     link: '',
-                    title: 'CreateBilling',
+                    title: 'Bayar Cicilan',
                     amount: 0,
                     icon: 'mdi-clipboard-list-outline',
                     color: 'blue-grey darken-1'
                 },
                 {
                     link: '',
-                    title: 'Failed',
+                    title: 'Cicil Emas Batangan',
                     amount: 0,
                     icon: 'mdi-clipboard-list-outline',
                     color: 'deep-orange darken-1'

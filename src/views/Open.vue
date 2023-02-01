@@ -1,34 +1,74 @@
 <template>
-    <fieldset>
-        <legend>Open Tabungan Emas</legend>
-        <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field v-model="channel" :counter="4" :rules="channelRules" label="Channel Id"
-                required></v-text-field>
-            <v-text-field v-model="client" :counter="4" :rules="clientRules" label="Client Id" required></v-text-field>
-            <v-text-field v-model="amount" :rules="amountRules" label="Amount" required></v-text-field>
-            <v-text-field v-model="customeremail" :rules="customeremailRules" label="Customer Email"
-                required></v-text-field>
-            <v-text-field v-model="customername" :rules="customernameRules" label="Customer Name"
-                required></v-text-field>
-            <v-select v-model="kodebank" :items="kodebanks" :rules="[v => !!v || 'Kode Bank is required']"
-                label="Kode Bank" required></v-select>
-            <v-select v-model="jenistransaksi" :items="jenistransaksis"
-                :rules="[v => !!v || 'Jenis Transaksi is required']" label="Jenis Transaksi" required></v-select>
-            <v-text-field v-model="keterangan" :rules="keteranganRules" label="Keterangan" required></v-text-field>
-            <v-text-field v-model="norek" :rules="norekRules" label="Nomor Rekening" required></v-text-field>
-            <v-select v-model="productcode" :items="productcodes" :rules="[v => !!v || 'Product Code is required']"
-                label="Product Code" required></v-select>
-            <v-text-field v-model="reffswitching" :counter="16" :rules="reffswitchingRules" label="Reffswitching"
-                required></v-text-field>
-
-            <v-btn :disabled="!valid" color="success" class="mr-4" @click="submit">
-                Submit
-            </v-btn>
-            <v-btn color="error" class="mr-4" @click="reset">
-                Reset
-            </v-btn>
-        </v-form>
-    </fieldset>
+    <div class="home">
+        <v-subheader class="py-0 d-flex justify-space-between rounded-lg">
+            <h3>Home</h3>
+        </v-subheader>
+        <br>
+        <v-row>
+            <v-col lg="7" cols="12">
+                <v-alert dense text type="success">
+                        Welcome to <strong>PDS</strong>
+                    </v-alert>
+                <v-row>
+                    <v-col lg="6" cols="12" v-for="(item, index) in activityLog" :key="index">
+                        <v-card elevation="2" class="rounded-lg">
+                            <v-card-text class="d-flex justify-space-between align-center">
+                                <div>
+                                    <strong>{{ item.title }}</strong> <br>
+                                    <!-- <span>Last 3 weeks</span> -->
+                                </div>
+                                <v-avatar size="60" :color="item.color" style="border: 3px solid #444">
+                                    <span style="color: white">{{ item.amount }} +</span>
+                                </v-avatar>
+                            </v-card-text>
+                            <v-card-actions class="d-flex justify-space-between">
+    
+    
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-col>
+            <v-col cols="12" lg="5">
+                <!-- <v-card>
+                        <v-card-title>Activities</v-card-title>
+                        <v-card-text class="py-0">
+                            <v-timeline align-top dense>
+                                <v-timeline-item color="indigo" small>
+                                    <strong>5 Minuts ago</strong>
+                                    <div class="text-caption">
+                                        You have new order please check this out
+                                    </div>
+                                </v-timeline-item>
+                                <v-timeline-item color="green" small>
+                                    <strong>35 Minuts ago</strong>
+                                    <div class="text-caption mb-2">
+                                        A Product has delivered!
+                                    </div>
+                                </v-timeline-item>
+    
+                                <v-timeline-item color="indigo" small>
+                                    <strong>44 Minuts ago</strong>
+                                    <div class="text-caption">
+                                        You have new order please check this out
+                                    </div>
+                                </v-timeline-item>
+                            </v-timeline>
+                        </v-card-text>
+                    </v-card> -->
+            </v-col>
+            <v-col>
+                <v-card>
+                    <v-data-table caption="Recent Transaction list" :headers="headers" :items="desserts" :items-per-page="5"
+                        class="elevation-1">
+                        <!-- <template v-slot:item.action="">
+                                <v-btn color="success" outlined small shaped>View</v-btn>
+                            </template> -->
+                    </v-data-table>
+                </v-card>
+            </v-col>
+        </v-row>
+    </div>
 
 </template>
 <style scoped>
