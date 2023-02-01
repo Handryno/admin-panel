@@ -70,7 +70,7 @@
     <div class="relative ">
       
         <!-- Dropdown toggle button -->
-          <button @click="show = !show" class="flex items-center p-2 rounded-md w-full ">
+          <button @click="show = !show" class="flex justify-between items-center p-2 rounded-md w-full ">
             <span class="mr-4 text-lg font-semibold text-gray-600">ATM BRI</span>
             <svg class="w-5 h-5 text-gray-400 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black">
               <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -97,7 +97,7 @@
       <div class="relative ">
         
           <!-- Dropdown toggle button -->
-            <button @click="mbr = !mbr" class="flex items-center p-2 rounded-md w-full ">
+            <button @click="mbr = !mbr" class="flex justify-between  items-center p-2 rounded-md w-full ">
               <span class="mr-4 text-lg font-semibold text-gray-600">Mobile Banking BRI</span>
               <svg class="w-5 h-5 text-gray-400 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black">
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>

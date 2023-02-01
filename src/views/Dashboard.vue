@@ -2,52 +2,71 @@
   <div class="container mx-auto px-24">
 
     <div class="grid grid-cols-2 gap-6">
-      <div class="bg-slate-100 h-auto rounded-md shadow-lg">
+      <div class="bg-slate-50 h-auto rounded-md shadow-md">
         <div class="font-medium text-3xl p-4">Mau Transaksi Apa ?</div>
         <!-- Card 1 sample to Looping -->
-        <div class="card1">
-          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
-        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
-          <img src="./../assets/ico-tabungan.svg">
+
+        <div class=" bg-gray-50 shadow h-auto text-ellipsis p-3 mx-4 mb-4 rounded flex justify-between">
+          <div class="icon flex flex-row">
+        <div class=" h-16 w-16 rounded-sm mr-6 p-4 max-md:p-2">
+          <a href="">
+
+            <img src="./../assets/icon-bayar-gadai.svg">
+          </a>
         </div>
           <p class="title text-sm pt-4 ">Tabungan Emas</p>
         </div>
+        <svg class="w-10 h-10 mt-4 -rotate-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="green">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
         </div>
-        <div class="card1">
-          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
-        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
-          <img src="./../assets/icon-bayar-gadai.svg">
+
+        <div class=" bg-gray-50 shadow h-auto text-ellipsis p-3 mx-4 mb-4 rounded flex justify-between">
+          <div class="icon flex flex-row">
+        <div class=" h-16 w-16 rounded-sm mr-6 p-4 max-md:p-2">
+          <img src="./../assets/ico-tabungan.svg">
         </div>
           <p class="title text-sm pt-4 ">Bayar Gadai</p>
         </div>
+        <svg class="w-10 h-10 mt-4 -rotate-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="green">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
         </div>
-        <div class="card1">
-          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
-        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
+
+        <div class=" bg-gray-50 shadow h-auto text-ellipsis p-3 mx-4 mb-4 rounded flex justify-between">
+          <div class="icon flex flex-row">
+        <div class=" h-16 w-16 rounded-sm mr-6 p-4 max-md:p-2">
           <img src="./../assets/icon-bayar-cicilan.svg">
         </div>
           <p class="title text-sm pt-4 ">Bayar Cicilan</p>
         </div>
+        <svg class="w-10 h-10 mt-4 -rotate-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="green">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
         </div>
-        <div class="card1">
-          <div class=" bg-gray-50 h-auto text-ellipsis p-3 mx-4 mb-4 rounded">
-        <div class=" h-16 w-16 rounded-sm float-left mr-6 text-center p-4">
+
+        <div class=" bg-gray-50 shadow h-auto text-ellipsis p-3 mx-4 mb-4 rounded flex justify-between">
+          <div class="icon flex flex-row">
+        <div class=" h-16 w-16 rounded-sm mr-6 p-4 max-md:p-2">
           <img src="./../assets/ico-cicil-emas.svg">
         </div>
-          <p class="title text-sm pt-4 ">Cicil Emas Batangan</p>
+          <p class="title text-sm pt-4 ">Cicilan Emas Batangan</p>
         </div>
+        <svg class="w-10 h-10 mt-4 -rotate-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="green">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
         </div>
         
       </div>
 
-      <div class="bg-slate-100 h-auto px-5 rounded-md">
+      <div class="bg-slate-50 shadow-md h-auto px-5 rounded-md">
         <div class="header pt-6 ">
           <div class="text-2xl ">Tabungan Emas Anda</div>
           <p class="text-xs">Selasa || 16 Jan 2023</p>
         </div>
 
         <!-- Card Jual & Beli -->
-        <div class="card grid grid-cols-2 gap-3 p-4 h-auto bg-gray-50 rounded">
+        <div class="card grid grid-cols-2 gap-3 p-4 h-auto bg-gray-50 shadow rounded">
           <!-- Jual Emas -->
           <div class="jual">
             <div class="harga flex">

@@ -34,7 +34,7 @@
     <!-- Input Rekening -->
     <div class="header">
       <div class="text-base font-medium">Rekening Tabungan Emas</div>
-      <input class="mt-4 p-2 border-gray-400 outline outline-1 rounded-sm w-full"/>
+      <input type="number" max="16" class="mt-4 p-2 border-gray-400 outline outline-1 rounded-sm w-full"/>
     </div>
 
     <!-- Harga Emas -->
@@ -107,14 +107,32 @@
         </div>
 
         <!-- button -->
-        <a href="/konfirmasiNoHp">
-            <button class=" bg-green-600 w-full p-3 font-semibold text-gray-50 mt-6 rounded">Beli Emas</button></a>
-  </div>
+            <button @click="show = !show"  class=" bg-green-600 w-full p-3 font-semibold text-gray-50 mt-6 rounded">Beli Emas</button>
+        </div>
+
+        <div v-show="show" class="alert bg-yellow-300 w-96 p-4 rounded absolute z-20 top-1 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl flex justify-between">
+            <div class="title">Apkah Anda Yakin ?</div>
+            <div class="button">
+                <button @click="show = !show" class="mt-1">Tidak</button>
+                <a href="/konfirmasiNoHp">
+                    <button @click="show = !show" class="p-1 px-3 ml-2 rounded bg-green-700 text-gray-50 font-bold">Ya</button>
+                </a>
+            </div>
+        </div>
+
 
 </div>
 </div>
 </template>
 <script>
 export default {
-  name: 'DetailPembayaran',}
+  name: 'DetailPembayaran',
+  methods:{
+  },data() {
+      return {
+        show: false,
+        mbr: false
+      };
+    },
+  }
 </script>

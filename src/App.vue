@@ -7,15 +7,18 @@
         <router-view></router-view>
       </v-container>
     </v-main>
+    <Footer></Footer>
   </v-app>
 </template>
 
+
+
 <script>
 import Sidebar from "./components/Navbar.vue";
-// import Topbar from "./components/Topbar";
+import Footer from "./components/Footer.vue";
 export default {
   name: "App",
-  components: { Sidebar },
+  components: { Sidebar , Footer},
   data: () => ({
     cards: ["Today", "Yesterday"],
     drawer: null,

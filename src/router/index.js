@@ -34,6 +34,11 @@ const routes = [
     name: 'MethodeDetailPembayaran',
     component: () => import('./../views/MethodeDetailPembayaran')
   },
+  {
+    path: '/profileUser',
+    name: 'ProfileUser',
+    component: () => import('./../views/ProfileUser')
+  },
 
 
 ]
