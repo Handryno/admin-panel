@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="bg-slate-100 h-auto grid grid-rows-3 gap-4 rounded col-span-2 shadow-xl">
+  <div class="bg-slate-100 h-auto grid grid-rows-auto gap-4 rounded col-span-2 shadow-xl">
 
     <!-- Input Rekening -->
     <div class="card bg-gray-50  0 py-5 px-8 rounded">
@@ -74,15 +74,9 @@
         </div>
     </div>
 
-    <div class="card bg-gray-50 py-5 px-8 mb-6">
-
-      <div class="promo p-3 border rounded mb-4">
-        <img src="" alt="">
-        <div class="text">Gunakan Kode Promo</div>
-      </div>
-
+    <div class="card bg-gray-50 py-5 px-8 ">
       <a href="/MetodePembayaran">
-        <button class=" bg-green-600 w-full p-2 font-semibold text-gray-50 mt-6 rounded">Selanjutnya</button>
+        <button class=" bg-green-600 w-full p-2 font-semibold text-gray-50 rounded">Selanjutnya</button>
       </a>
     </div>
   </div>

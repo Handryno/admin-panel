@@ -65,14 +65,60 @@
 
 
     <div class="card bg-gray-50 py-5 px-8 mb-6">
-      <div class="promo p-3 border rounded mb-4">
-        <img src="" alt="">
-        <div class="text-lg font-semibold text-gray-600">ATM BRI</div>
+     <!-- Drop Down ATM BRI -->
+     <div class="button border rounded p-2 mb-3">
+    <div class="relative ">
+      
+        <!-- Dropdown toggle button -->
+          <button @click="show = !show" class="flex items-center p-2 rounded-md w-full ">
+            <span class="mr-4 text-lg font-semibold text-gray-600">ATM BRI</span>
+            <svg class="w-5 h-5 text-gray-400 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+
+      <!-- Dropdown menu -->
+      <div v-show="show" class="   py-2 w-full">
+        <ul class="marker:bg-stone-800">
+          <li>1. Masukan Kartu ATM dan Pin</li>
+          <li>2. Pilih Menu "Transaksi"</li>
+          <li>3. Pilih Menu "Pembayaran", hingga menemukan menu "Pegadaian"</li>
+          <li>4. Pilih Menu "Pembayaran Angsuran"</li>
+          <li>5. Masukan "Nomor Virtual Account" Pegadaian , lalu pilih tombol Benar</li>
+          <li>6. Akan muncul konfirmasi pembayaran, lalu pilih Ya</li>
+          <li>7. Transaksi selesai, simpan bukti bayar Anda</li>
+        </ul>
       </div>
-     <div class="promo p-3 border rounded mb-4">
-        <img src="" alt="">
-        <div class="text-lg font-semibold text-gray-600">Mobile Banking BRI</div>
+    </div>
+  </div>
+
+    <!-- Drop Down Mobile Banking BRI  -->
+    <div class="button border rounded p-2">
+      <div class="relative ">
+        
+          <!-- Dropdown toggle button -->
+            <button @click="mbr = !mbr" class="flex items-center p-2 rounded-md w-full ">
+              <span class="mr-4 text-lg font-semibold text-gray-600">Mobile Banking BRI</span>
+              <svg class="w-5 h-5 text-gray-400 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+
+        <!-- Dropdown menu -->
+        <div v-show="mbr" class=" py-2 w-full">
+        <ul class="marker:bg-stone-800">
+          <li>1. Login Ke Aplikasi Mobile Banking BRI Anda</li>
+          <li>2. Pilih Menu "Pembayaran"</li>
+          <li>3. Pilih Menu "Pegadaian"</li>
+          <li>4. Pilih Menu "Tipe Pembayaran"</li>
+          <li>5. Masukan "Nomor Virtual Account"</li>
+          <li>6. Setelah mucul tagihan , pilih Konfirmasi</li>
+          <li>7. Masukan PIN</li>
+          <li>8. Transaksi selesai , simpan bukti bayar Anda</li>
+        </ul>
+        </div>
       </div>
+    </div>
 
       <a href="/MetodePembayaran">
         <button class=" bg-green-600 w-full p-2 font-semibold text-gray-50 mt-6 rounded">Selesai</button>
@@ -84,6 +130,22 @@
 </div>
 </template>
 <script>
+import { ref } from "vue";
+
+const menubtn = ref(null);
+
 export default {
-  name: 'MethodeDetailPembayaran',}
+  data() {
+      return {
+        show: false,
+        mbr: false
+      };
+    },
+  name: 'MethodeDetailPembayaran',
+  methods:{
+    // const btn = document.getElementById('menu-btn'),
+    menuBtn(menubtn){
+      this.$refs[menubtn].$el.classList.value = this.$refs[menubtn].$el.classList.value + 'hidden'
+    }
+  }}
 </script>
