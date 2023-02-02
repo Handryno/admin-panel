@@ -58,10 +58,10 @@
         </button >
 
       <div  v-show="mbr" class="bank flex p-3 border-t-2">
-        <img src="./../assets/logo-pegadaian-va.jpeg" class="h-12 w-22" alt="">
+        <img src="./../assets/logo-finpay.png" class="h-12 w-22" alt="">
         <div class="judl">
-          <div class="nmBank font-medium text-xl mt-2 ml-4">Pegadaian</div>
-          <div class="sub-title font-light ml-4 text-gray-500 text-xs -mt-1">Bayar di cabang</div>
+          <div class="nmBank font-medium text-xl mt-2 ml-4">Finpay</div>
+          <div class="sub-title font-light ml-4 text-gray-500 text-xs -mt-1">Finpay Virtual Account</div>
         </div>
       </div>
     </div>
@@ -96,18 +96,6 @@
         </div>
             <button @click="show = !show" class=" bg-green-600 p-2 w-36 font-semibold text-gray-50 mt-6 rounded">Bayar</button>
     </div>
-
-    <div v-show="show" class="alert bg-yellow-300 w-96 p-4 rounded absolute z-20 top-1 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl flex justify-between">
-            <div class="title">Apkah Anda Yakin ?</div>
-            <div class="button">
-                <button @click="show = !show" class="mt-1">Tidak</button>
-                <a href="/methodeDetailPembayaran">
-                    <button @click="show = !show" class="p-1 px-3 ml-2 rounded bg-green-700 text-gray-50 font-bold">Ya</button>
-                </a>
-            </div>
-        </div>
-
-
   </div>
 
 </div>
