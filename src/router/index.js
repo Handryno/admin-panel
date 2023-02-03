@@ -22,7 +22,8 @@ const routes = [
   {
     path: '/konfirmasiTransaksi',
     name: 'KonfirmasiTransaksi',
-    component: () => import('./../views/KonfirmasiTransaksi')
+    component: () => import('./../views/KonfirmasiTransaksi'),
+    props: true,
   },
   {
     path: '/metodePembayaran',
