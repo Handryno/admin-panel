@@ -1,4 +1,6 @@
 <template>
+  <div>
+        <Sidebar></Sidebar>
     <div class="container mx-auto px-24">
         <div class="bg-gray-white p-4 h-auto flex justify-between rounded shadow-md">
             <!-- Avatar -->
@@ -52,10 +54,12 @@
             <div class="font-medium text-base mb-6">Informasi Penguna</div>
 
             <div class="isi grid grid-rows-auto gap-2">
-                <div class="namaNasabah flex ">
+              <a href="/detailUser">
+                <button class="namaNasabah flex ">
                     <div class="icon w-8 h-5 rounded-full bg-gradient-to-r from-green-700 to-green-500"></div>
                     <div class="isi ml-2">Data Nasabah</div>
-                </div>
+                </button>
+              </a>
                 <hr>
                 <div class="namaNasabah flex ">
                     <div class="icon w-8 h-5 rounded-full bg-gradient-to-r from-green-700 to-green-500"></div>
@@ -123,10 +127,16 @@
         </div>
 
     </div>
-
+    <Footer></Footer>
+</div>
 </template>
 <script>
+import Sidebar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 export default {
+  components: {
+    Footer,
+    Sidebar,},
   data() {
       return {
         show: false,

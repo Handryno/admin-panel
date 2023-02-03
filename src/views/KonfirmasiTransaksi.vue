@@ -1,4 +1,6 @@
 <template>
+  <div>
+        <Sidebar></Sidebar>
     <div class="container mx-auto px-24">
 
 <div class="grid grid-cols-3 gap-6">
@@ -83,8 +85,15 @@
 
 </div>
 </div>
+<Footer></Footer>
+</div>
 </template>
 <script>
+import Sidebar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 export default {
+  components: {
+    Footer,
+    Sidebar,},
   name: 'KofirmasiTransaksi',}
 </script>

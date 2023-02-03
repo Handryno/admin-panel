@@ -1,5 +1,5 @@
 <template>
-     <div class=" w-full h-auto bg-green-700 shadow-md ">
+     <div class=" w-full h-auto bg-green-700 shadow-md py-1 mb-20">
         <div class="container mx-auto px-28 mb-1 max-md:px-2 max-md:mx-2 flex justify-between">
           <div class="logo p-2">
             <a href="/">

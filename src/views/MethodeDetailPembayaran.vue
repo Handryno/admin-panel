@@ -1,4 +1,6 @@
 <template>
+  <div>
+        <Sidebar></Sidebar>
     <div class="container mx-auto px-24">
 
 <div class="grid grid-cols-3 gap-6">
@@ -128,13 +130,20 @@
 
 </div>
 </div>
+<Footer></Footer>
+</div>
 </template>
 <script>
+import Sidebar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 import { ref } from "vue";
 
 const menubtn = ref(null);
 
 export default {
+  components: {
+    Footer,
+    Sidebar,},
   data() {
       return {
         show: false,

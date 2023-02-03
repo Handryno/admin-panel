@@ -1,9 +1,9 @@
 <template>
-  <div class="dif">
+    <div class="div">
     <Sidebar></Sidebar>
-
+    
     <div class="container mx-auto px-24">
-  
+
       <div class="grid grid-cols-2 gap-6">
         <div class="bg-slate-50 h-auto rounded-md shadow-md">
           <div class="font-medium text-3xl p-4">Mau Transaksi Apa ?</div>
@@ -95,53 +95,51 @@
         </div>
   
       </div>
-  </div>
+    </div>
+  
   <Footer></Footer>
-  </div>
-
-
-
-</template>
-<script>
-import Sidebar from "../components/Navbar.vue";
+</div>
+  </template>
+  <script>
+import Sidebar from "../components/NavLog.vue";
 import Footer from "../components/Footer.vue";
-// import logo from "./assets/ico-tabungan.svg";
-import Chart from 'vue-chartjs3'
-import { RouterLink } from 'vue-router';
-export default {
-  name: 'App',
-  components: {
-    Footer,
+  // import logo from "./assets/ico-tabungan.svg";
+  import Chart from 'vue-chartjs3';
+  import { RouterLink } from 'vue-router';
+  export default {
+    name: 'App',
+    components: {
+      Footer,
     Sidebar,
-    Chart,
-    RouterLink
-},
-    data () {
-        return {
-          
-              // logo,
-              type: 'line',
-              data: {
-                labels: ["Januari", "February", "Maret", "April", "Mei", "Juni" , "Juli" , "Agustus"],
-                datasets: [
-                  {
-                    label: 'Harga Jual',
-                    data: [12, 19, 3, 5, 2, 3,9,3],
-                    backgroundColor: '#386380'
-                  },	
-                  {
-                    label: 'Harga Beli',
-                    data: [7, 11, 5, 8, 3, 7,5,6],
-                    backgroundColor: '#ff6384'
-                  }
-        		],
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
+      Chart,
+      RouterLink
+  },
+      data () {
+          return {
+            
+                // logo,
+                type: 'line',
+                data: {
+                  labels: ["Januari", "February", "Maret", "April", "Mei", "Juni" , "Juli" , "Agustus"],
+                  datasets: [
+                    {
+                      label: 'Harga Jual',
+                      data: [12, 19, 3, 5, 2, 3,9,3],
+                      backgroundColor: '#386380'
+                    },	
+                    {
+                      label: 'Harga Beli',
+                      data: [7, 11, 5, 8, 3, 7,5,6],
+                      backgroundColor: '#ff6384'
+                    }
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                }
               }
-        	}
-    }
-};
-
-</script>
+      }
+  };
+  
+  </script>

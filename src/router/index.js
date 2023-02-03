@@ -39,7 +39,16 @@ const routes = [
     name: 'ProfileUser',
     component: () => import('./../views/ProfileUser')
   },
-
+  {
+    path: '/baseDashboard',
+    name: 'BaseDashboard',
+    component: () => import('./../views/BaseDashboard')
+  },
+  {
+    path: '/detailUser',
+    name: 'DetailUser',
+    component: () => import('./../views/DetailUser')
+  },
 
 ]
 
