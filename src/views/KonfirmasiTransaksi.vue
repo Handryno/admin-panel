@@ -45,15 +45,15 @@
             <div class="isi grid grid-rows-3 gap-4">
               <div class="namaNasabah flex justify-between ">
                 <div class="ket">Nama Nasabah</div>
-                <div class="isi">{{ this.$route.params.result.namaNasabah }}</div>
+                <!-- <div class="isi">{{ this.$route.params.result.namaNasabah }}</div> -->
               </div>
               <div class="nomorKredit flex justify-between ">
                 <div class="ket">Nomor Kredit</div>
-                <div class="isi">{{this.$route.params.result.norek}}</div>
+                <!-- <div class="isi">{{this.$route.params.result.norek}}</div> -->
               </div>
               <div class="nominalEmas flex justify-between ">
                 <div class="ket">Nominal Emas</div>
-                <div class="isi">{{this.$route.params.result.gram}}</div>
+                <!-- <div class="isi">{{this.$route.params.result.gram}}</div> -->
               </div>
             </div>
           </div>
@@ -66,15 +66,15 @@
             <div class="isi grid grid-rows-3 gap-4">
               <div class="namaNasabah flex justify-between ">
                 <div class="ket">Jumlah Pembayaran </div>
-                <div class="isi">{{this.$route.params.result.nilaiTransaksi}}</div>
+                <!-- <div class="isi">{{this.$route.params.result.nilaiTransaksi}}</div> -->
               </div>
               <div class="nomorKredit flex justify-between ">
                 <div class="ket">Biaya Administrasi</div>
-                <div class="isi">{{this.$route.params.result.administrasi}}</div>
+                <!-- <div class="isi">{{this.$route.params.result.administrasi}}</div> -->
               </div>
               <div class="nominalEmas flex justify-between ">
                 <div class="ket font-medium text-lg">Total Harga</div>
-                <div class="isi font-medium text-lg">{{this.$route.params.result.totalKewajiban}}</div>
+                <!-- <div class="isi font-medium text-lg">{{this.$route.params.result.totalKewajiban}}</div> -->
               </div>
             </div>
           </div>
@@ -100,4 +100,5 @@ export default {
     Footer,
     Sidebar,},
   name: 'KofirmasiTransaksi',}
+  
 </script>
