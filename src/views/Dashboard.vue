@@ -75,7 +75,7 @@
               <div class="harga flex">
                 <div class="rupiah mr-1">Rp 9,500</div> / <div class="gram font-light text-sm mt-0.5 ml-1">0,09 gr</div>
               </div>
-              <a href="/detailPembayaran">
+              <a href="/inquiry">
               <button class=" bg-green-600 w-full p-1 font-semibold text-gray-50 mt-4 rounded">Beli Emas</button></a>
             </div>
             <!-- Beli Emas -->

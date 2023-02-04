@@ -1,6 +1,4 @@
 <template>
-    <div class="mb-20">
-        <Sidebar></Sidebar>
     <div class="container mx-auto px-24">
 
         <div class="grid grid-cols-3 gap-6">
@@ -9,7 +7,7 @@
             <div class="h-auto bagian-tahap ">
                 <!-- Button Back -->
                 <div class="kembali">
-                    <a href="/" class="flex">
+                    <a href="/dashboard" class="flex">
                         <img src="./../assets/arrow-left-green.svg">
                         <div class="font-medium text-2xl p-4 text-gray-800">Beli Tabungan Emas</div>
                     </a>
@@ -42,8 +40,8 @@
                 <div class="header">
                     <div class="text-base font-medium">Rekening Tabungan Emas</div>
                     <!-- <input  type="number" class="mt-4 p-2 border-gray-400 outline outline-1 rounded-sm w-full" v-model="norek" :rules="norekRules" /> -->
-                    <v-text-field outlined class="mt-4 p-2 border-gray-400 outline-1" v-model="norek" :rules="norekRules"
-                        required></v-text-field>
+                    <v-text-field outlined class="mt-4 p-2 border-gray-400 outline-1" v-model="norek"
+                        :rules="norekRules" required></v-text-field>
                 </div>
                 <!-- Harga Emas -->
                 <div v-if="check">
@@ -53,7 +51,6 @@
                             <div class="rupiah mr-1">Rp 6,040</div> / <div class="gram font-light text-sm mt-0.5 ml-1">
                                 0,01 gr</div>
                         </div>
-                    </div>
                     </div>
                     <!-- Nominal pembeli -->
                     <fieldset class="mt-6">
@@ -65,36 +62,35 @@
                             <input placeholder="Masukan amount" class="p-3 focus:outline-none" id="rupiah"
                                 v-model="amount" required>
                         </div>
+                        <div v-if="alert" class="text-red-500 text-xs">
+                            Minimal 10,000
+                        </div>
                     </fieldset>
-                         <!-- syarat -->
+                    <!-- syarat -->
                     <div class="syarat flex mt-2">
-                        <input type="checkbox" name="setuju" id="setuju" v-model="setuju" required>
+                        <input type="checkbox" name="setuju" id="setuju"  v-model="setuju" required>
                         <div class="tulisan">
-                            <div class="rupiah mr-1 text-sm ml-1"> Saya setuju dengan <a href="https://digital.pegadaian.co.id/bantuan/syarat-ketentuan">Syarat dan Ketentuan</a> yang berlaku</div>
+                            <div class="rupiah mr-1 text-sm ml-1"> Saya setuju dengan <a
+                                    href="https://digital.pegadaian.co.id/bantuan/syarat-ketentuan">Syarat dan
+                                    Ketentuan</a> yang berlaku</div>
                         </div>
                     </div>
-                
-                        <!-- button -->
-                        <button class="bg-green-600 w-full p-3 font-semibold text-gray-50 mt-6 rounded"
-                        @click="popup()">Beli Emas</button>
-             </v-form>
-        </div>
+                    <!-- button -->
+                    <button type="button" class=" bg-green-600 w-full p-3 font-semibold text-gray-50 mt-6 rounded" color="success"
+                        @click="popup()">Beli
+                        Emas</button>
+                </div>
 
-</div>
-<Footer></Footer>
-</div>
+            </v-form>
+        </div>
+    </div>
 </template>
 <script>
 import axios from 'axios'
-import Sidebar from "../components/Navbar.vue";
-import Footer from "../components/Footer.vue";
+
 export default {
-    components: {
-    Footer,
-    Sidebar,},
-  name: 'DetailPembayaran',
-  methods:{
-  },data:()=> ({
+    name: 'DetailPembayaran',
+    data: () => ({
         valid: true,
         amount: '',
         amountRules: [
@@ -109,14 +105,21 @@ export default {
             v => !!v || 'Nomor Rekening tidak boleh kosong.',
             v => (v && v.length == 16) || 'Nomor Rekening harus 16 digit.',
         ],
-    }), methods: {
-        popup(){
-            if (confirm("Are you Sure ?")){
+        setuju: ''
+    }),
+    methods: {
+        popup() {
+            if (confirm("Are you Sure ?")) {
                 this.submit();
-            }else{
+            } else {
+
             }
         },
         submit() {
+            if(this.setuju != true){
+                window.alert("setuju dulu");
+                return;
+            };
             const credentials = {
                 amount: this.amount,
                 channelId: this.channelId,
@@ -126,11 +129,16 @@ export default {
             };
             axios
                 .post(`http://localhost:8989/tabunganemas/inquiry`, credentials)
-                .then((credentials) => 
-                {
-                    if(credentials.data.responseCode != '00'){
-                        window.alert("Nomor Rekening tidak ditemukan!")
-                    }else{
+                .then((credentials) => {
+                    if (credentials.data.responseCode != '00') {
+                        window.alert("Nomor Rekening tidak ditemukan!");
+                        return;
+                    }
+                    if (credentials.data.responseCode == '12') {
+                        window.alert("Amount Minimal 10.000!")
+                        return;
+                    }
+                    else {
                         this.$router.push({ name: 'KonfirmasiTransaksi', params: { result: JSON.parse(credentials.data.data) } })
                     }
                 }
@@ -141,6 +149,9 @@ export default {
         check() {
             return this.norek.length == 16 ? true : false
         },
+        alert() {
+            return this.amount < 10000 ? true : false
+        }
     }
 }
 </script>

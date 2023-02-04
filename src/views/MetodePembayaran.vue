@@ -9,7 +9,7 @@
   <div class="h-auto bagian-tahap ">
     <!-- Button Back -->
     <div class="kembali">
-        <a href="/" class="flex">
+        <a href="/konfirmasiTransaksi" class="flex">
         <img src="./../assets/arrow-left-green.svg">
         <div class="font-medium text-2xl p-4 text-gray-800">Beli Tabungan Emas</div>
         </a>
@@ -44,9 +44,9 @@
           </svg>
       </button>
       <hr>
-      <div class="bri " v-show="show" >
+      <!-- <div class="bri " v-show="show" > -->
 
-        <input type="radio" id="hosting-small" name="hosting" value="hosting-small" class="hidden peer" required>
+        <input type="radio" id="hosting-small" name="hosting" value="bri" class="hidden peer" required>
         <label for="hosting-small" class="inline-flex items-center justify-between w-full p-5 text-gray-900 border border-gray-200 cursor-pointer dark:hover:text-gray-900 dark:border-gray-700 dark:peer-checked:text-green-500 peer-checked:border-green-600 peer-checked:text-green-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-900">                           
             <div class="flex">
               <img src="./../assets/logo-bri.jpeg" class="h-12 w-22" alt="">
@@ -56,11 +56,11 @@
             </div>
             <svg aria-hidden="true" class="w-6 h-6 ml-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </label>
-      </div>
+      <!-- </div> -->
     </div>
 
     <div class="card border w-full ">
-        <button @click="mbr = !mbr" class=" text-green-600 border-b-2 p-3 drop-shadow-sm w-full text-start flex justify-between">
+        <button  @click="mbr = !mbr" class=" text-green-600 border-b-2 p-3 drop-shadow-sm w-full text-start flex justify-between">
           <div class="mtode-name font-medium ">
             Metode Pembayaran Lain
           </div>
@@ -69,56 +69,49 @@
           </svg>
         </button >
 
-      <div  v-show="mbr" class="bank flex w-full border-t-2">
+      <!-- <div  v-show="mbr" class="bank flex w-full border-t-2"> -->
     <div class="card border w-full ">
-      <input type="radio" id="hosting-big" name="hosting" value="hosting-big" class="hidden peer">
+      <input type="radio" id="hosting-big" name="hosting" value="finpay" class="hidden peer">
         <label for="hosting-big" class="inline-flex items-center justify-between w-full p-5 text-gray-900 border border-gray-200 cursor-pointer dark:hover:text-gray-900 dark:border-gray-700 dark:peer-checked:text-green-500 peer-checked:border-green-600 peer-checked:text-green-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-900">
           <div class="flex">
-              <img src="./../assets/logo-pegadaian-va.jpeg" class="h-12 w-22" alt="">
+              <img src="./../assets/logo-finpay.png" class="h-12 w-22" alt="">
               <div class="judl">
-                <div class="nmBank font-medium text-xl mt-2 ml-4">Pegadaian</div>
+                <div class="nmBank font-medium text-xl mt-2 ml-4">Finpay</div>
               </div>
             </div>
             <svg aria-hidden="true" class="w-6 h-6 ml-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </label>
     </div>
-      </div>
+      <!-- </div> -->
     </div>
 
-    <div v-show="dtl" class="Detail mt-3">
+    <!-- <div v-show="dtl" class="Detail mt-3"> -->
         <div class="text-lg font-semibold mb-2">Detail Pembayaran</div>
         <div class="sub-title">
           <div class="flex justify-between">
             <div class="detail text-xs font-light">Total Biaya</div>
-            <div class="harga text-xs font-light">Rp. 10,000</div>
+            <!-- <div class="harga text-xs font-light">{{ this.$route.params.result.totalKewajiban }}</div> -->
           </div>
           <div class="flex justify-between">
             <div class="detail text-xs font-light">Biaya Admin</div>
-            <div class="harga text-xs font-light">Rp. 0</div>
+            <div class="harga text-xs font-light">Rp. 1,500</div>
           </div>
         </div>
         <hr class="mt-1">
-      </div>
+      <!-- </div> -->
       
     <div  class="flex justify-between">
 
-        <div class="total mt-4">
-            <button class="flex justify-between" @click="dtl = !dtl">
+        <div class="total mt-4">      
               <div class="mtode-name font-light text-sm ">
                 Total Pembayaran
               </div>
-              <svg class="w-4 h-4 text-gray-400 dark:text-white rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="black">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
-            </button>
-            <div class="title">Rp. 10,000</div>
+            <!-- <div class="title">Rp. {{ +this.$route.params.result.totalKewajiban + 1500}}</div> -->
         </div>
-            <button @click="alrt = !alrt" class=" bg-green-600 p-2 w-36 font-semibold text-gray-50 mt-6 rounded">Bayar</button>
+        
+            <button type="button" @click="popup()" class=" bg-green-600 p-2 w-36 font-semibold text-gray-50 mt-6 rounded">Bayar</button>
     </div>
-
-   
-
-
+  
   </div>
 
 </div>
@@ -130,17 +123,62 @@
 <script>
 import Sidebar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
+import axios from 'axios'
 export default {
   components: {
     Footer,
-    Sidebar,},
-  data() {
-      return {
-        alrt:false,
-        show: false,
-        mbr: false,
-        dtl: false
-      };
-    },
-  name: 'MetodePembayarmbran',}
+    Sidebar,
+  },
+  name: 'MetodePembayarmbran',
+    data: () => ({
+      show: false,
+      mbr: false,
+      dtl: false,
+
+      amount: +this.$route.params.result.totalKewajiban + 1500,
+      channelId: '6017',
+      clientId: '9997',
+      customerEmail: 'handrytani@gmail.com',
+      customerName: this.$route.params.result.namaNasabah,
+      customerPhone: '081289805580',
+      jenisTransaksi: this.$route.params.result.jenisTransaksi,
+      keterangan: this.$route.params.result.namaProduk,
+      norek: this.$route.params.result.norek,
+      productCode: '62',
+      trxId: this.$route.params.result.reffSwitching,
+    }),
+    methods: {
+      popup() {
+        if (confirm("Are you Sure ?")) {
+          this.submit();
+        } else {
+
+        }
+      },
+      submit() {
+        const credentials = {
+          amount: +this.$route.params.result.totalKewajiban + 1500,
+          channelId: '6017',
+          clientId: '9997',
+          customerEmail: 'handrytani@gmail.com',
+          customerName: this.$route.params.result.namaNasabah,
+          customerPhone: '081289805580',
+          jenisTransaksi: this.$route.params.result.jenisTransaksi,
+          keterangan: this.$route.params.result.namaProduk,
+          norek: this.$route.params.result.norek,
+          productCode: '62',
+          trxId: this.$route.params.result.reffSwitching,
+        };
+        axios
+          .post(`http://localhost:9095/va/finpay/createbilling`, credentials)
+          .then((credentials) => {
+
+           
+            this.$router.push({ name: 'VirtualAccount', params: { result: JSON.parse(credentials.data.data) } })
+            
+          }
+          );
+      },
+    }
+}
 </script>

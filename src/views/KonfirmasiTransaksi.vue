@@ -9,7 +9,7 @@
       <div class="h-auto bagian-tahap ">
         <!-- Button Back -->
         <div class="kembali">
-          <a href="/" class="flex">
+          <a href="/inquiry" class="flex">
             <img src="./../assets/arrow-left-green.svg">
             <div class="font-medium text-2xl p-4 text-gray-800">Beli Tabungan Emas</div>
           </a>
@@ -52,8 +52,16 @@
                 <!-- <div class="isi">{{this.$route.params.result.norek}}</div> -->
               </div>
               <div class="nominalEmas flex justify-between ">
+                <div class="ket">ID Transaksi</div>
+                <!-- <div class="isi">{{this.$route.params.result.reffSwitching}}</div> -->
+              </div>
+              <div class="nominalEmas flex justify-between ">
                 <div class="ket">Nominal Emas</div>
                 <!-- <div class="isi">{{this.$route.params.result.gram}}</div> -->
+              </div>
+              <div class="nominalEmas flex justify-between ">
+                <div class="ket">Tanggal Transaksi</div>
+                <!-- <div class="isi">{{this.$route.params.result.tglTransaksi}}</div> -->
               </div>
             </div>
           </div>
@@ -81,9 +89,9 @@
         </div>
 
         <div class="card bg-gray-50 py-5 px-8 mb-6">
-          <a href="/MetodePembayaran">
-            <button class=" bg-green-600 w-full p-2 font-semibold text-gray-50 mt-6 rounded">Selanjutnya</button>
-          </a>
+          <!-- <a href="/MetodePembayaran"> -->
+            <button type="button" class=" bg-green-600 w-full p-2 font-semibold text-gray-50 mt-6 rounded" @click="popup()">Selanjutnya</button>
+          <!-- </a> -->
         </div>
       </div>
 
@@ -99,6 +107,24 @@ export default {
   components: {
     Footer,
     Sidebar,},
-  name: 'KofirmasiTransaksi',}
+  name: 'KofirmasiTransaksi',
+    data: () => ({
+
+    }),
+    methods: {
+      popup() {
+        if (confirm("Are you Sure ?")) {
+          this.$router.push({ name: 'MetodePembayaran', params: { result: this.$route.params.result } })
+          console.log(this.$route.params.result);
+        } else {
+
+        }
+      },
+
+    }
+
+
+
+}
   
 </script>

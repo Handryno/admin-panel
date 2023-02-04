@@ -9,7 +9,7 @@
   <div class="h-auto bagian-tahap ">
     <!-- Button Back -->
     <div class="kembali">
-        <a href="/" class="flex">
+        <a href="/metodePembayaran" class="flex">
         <img src="./../assets/arrow-left-green.svg">
         <div class="font-medium text-2xl p-4 text-gray-800">Beli Tabungan Emas</div>
         </a>
@@ -37,7 +37,7 @@
     <div class="card bg-gray-50 h-auto py-5 px-8 rounded">
         <div class="header">
           <div class="font-medium text-base ">Batas Waktu Pembayaran</div>
-            <div class="sub-title">30 January 2023 || 19:42:49 WIB</div>
+            <!-- <div class="sub-title">{{ this.$route.params.result.tglExpired }}</div> -->
         </div>
     </div>
 
@@ -45,13 +45,12 @@
         <div class="font-medium text-base">Metode Pembayaran</div>
         <div class="header flex justify-between ">
           <div class="bank flex p-3">
-        <img src="./../assets/logo-pegadaian-va.jpeg" class="h-12 w-22" alt="">
+        <img src="./../assets/logo-finpay.png" class="h-12 w-22" alt="">
         <div class="tex">
-            <div class="nmBank font-light text-base  ml-4">Metode Pembayaran Lain</div>
-            <div class="noVA font-normal text-base mt-1 ml-4">01923287198387129387</div>
+            <div class="nmBank font-light text-base  ml-4">Nomor Virtual Account</div>
+            <!-- <div class="noVA font-normal text-base mt-1 ml-4">{{ this.$route.params.result.payment_code }}</div> -->
         </div>
         </div>
-        <div class="salin text-lg text-green-600 font-semibold mt-4">Salin</div>
         </div>
     </div>
 
@@ -59,8 +58,8 @@
         <div class="header">
           <div class="font-medium text-base">Jumlah Pembayaran</div>
           <div class="bank flex justify-between">
-        <div class="nmBank font-semibold text-2xl">Rp. 10,000</div>
-        <div class="salin text-lg text-green-600 font-semibold mt-4">Salin</div>
+        <!-- <div class="nmBank font-semibold text-2xl">Rp. {{ this.$route.params.result.totalKewajiban }}</div> -->
+        
       </div>
         </div>
     </div>
@@ -122,7 +121,7 @@
       </div>
     </div>
 
-      <a href="/MetodePembayaran">
+      <a href="/dashboard">
         <button class=" bg-green-600 w-full p-2 font-semibold text-gray-50 mt-6 rounded">Selesai</button>
       </a>
     </div>

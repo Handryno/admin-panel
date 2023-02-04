@@ -10,14 +10,9 @@ const routes = [
     component: () => import('./../views/Dashboard')
   },
   {
-    path: '/detailPembayaran',
-    name: 'DetailPembayaran',
-    component: () => import('./../views/DetailPembayaran')
-  },
-  {
-    path: '/konfirmasiNoHp',
-    name: 'KonfirmasiNoHp',
-    component: () => import('./../views/KonfirmasiNoHp')
+    path: '/inquiry',
+    name: 'inquiry',
+    component: () => import('./../views/Inquiry')
   },
   {
     path: '/konfirmasiTransaksi',
@@ -28,12 +23,14 @@ const routes = [
   {
     path: '/metodePembayaran',
     name: 'MetodePembayaran',
-    component: () => import('./../views/MetodePembayaran')
+    component: () => import('./../views/MetodePembayaran'),
+    props: true,
   },
   {
-    path: '/methodeDetailPembayaran',
-    name: 'MethodeDetailPembayaran',
-    component: () => import('./../views/MethodeDetailPembayaran')
+    path: '/virtualAccount',
+    name: 'VirtualAccount',
+    component: () => import('./../views/VirtualAccount'),
+    props: true,
   },
   {
     path: '/profileUser',
@@ -41,9 +38,9 @@ const routes = [
     component: () => import('./../views/ProfileUser')
   },
   {
-    path: '/baseDashboard',
-    name: 'BaseDashboard',
-    component: () => import('./../views/BaseDashboard')
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('./../views/Dashboard')
   },
   {
     path: '/detailUser',
